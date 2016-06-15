@@ -1,0 +1,6 @@
+# Maintain this file manually.  Do NOT use `pip freeze`
+flake8>=2.5.4
+pep257>=0.7.0
+pytest>=2.8.7
+pylint>=1.5.4
+tox>=2.3.1
