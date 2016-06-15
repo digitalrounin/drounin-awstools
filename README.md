@@ -13,7 +13,7 @@ Usage:
 To install under `~/.local` with virtualenvs taken care of:
 
   ```
-  $ pip install --user git+git://github.com/digitalrounin/drounin-awstools.git
+  $ pip install --user git+https://github.com/digitalrounin/drounin-awstools.git
   ```
 
 Make sure that `~/.local/bin` is in your `PATH`.  Something like this in your
