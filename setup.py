@@ -16,7 +16,7 @@ setup(
     install_requires=[
         'awscli>=1.10.38',
         'boto3>=1.3.1',
-        'colorama>=0.3.3',
+        'colorama==0.3.3',
         'PyYAML>=3.11'
     ],
     entry_points={'console_scripts': [
