@@ -21,6 +21,7 @@ setup(
     ],
     entry_points={'console_scripts': [
         'draws-instance-statuses = drawstools.instance:list_status',
+        'draws-instance-change-state = drawstools.instance.state.change:main',
     ]},
     # include_package_data=True,
     # package_data={
