@@ -51,6 +51,8 @@ def get_instance_name(instance):
 
 def stop_instances(instances, dry_run=False, cmd_args=None):
     # pylint: disable=unused-argument
+    LOGGER.info('Stopping instances: %s',
+                [get_instance_name(x) for x in instances])
     for instance in instances:
         state = instance.state['Name']
         name = get_instance_name(instance)
@@ -71,6 +73,8 @@ def stop_instances(instances, dry_run=False, cmd_args=None):
 
 def start_instances(instances, dry_run=False, cmd_args=None):
     # pylint: disable=unused-argument
+    LOGGER.info('Starting instances: %s',
+                [get_instance_name(x) for x in instances])
     for instance in instances:
         state = instance.state['Name']
         name = get_instance_name(instance)
@@ -90,6 +94,8 @@ def start_instances(instances, dry_run=False, cmd_args=None):
 
 
 def terminate_instances(instances, dry_run=False, cmd_args=None):
+    LOGGER.info('Terminating instances: %s',
+                [get_instance_name(x) for x in instances])
     for instance in instances:
         state = instance.state['Name']
         name = get_instance_name(instance)
@@ -241,7 +247,10 @@ def main():
     args = process_args()
     config_logging(log_file=args.log_file)
     LOGGER.info('Execution started')
+    LOGGER.info('Command line arguments: %s', args)
     instances = args.instances_getter(values=args.values, region=args.region)
+    LOGGER.info('Processing instances: %s',
+                [get_instance_name(x) for x in instances])
     args.func(instances=instances, dry_run=args.dry_run, cmd_args=args)
     LOGGER.info('Execution ended')
 
